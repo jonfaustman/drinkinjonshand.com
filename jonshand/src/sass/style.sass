@@ -1,0 +1,76 @@
+/*!
+ * Theme Name: 	Drink in Jon's Hand
+ * Description: 	A custom theme promoting drinking and holding.
+ * Version: 		1.0.0
+ * Author: 		Jon Faustman
+ * Author URI: 	http://jon.faustman.org/
+ */
+
+@import compass/reset
+@import compass/css3
+@import base
+
+$base-rhythm: 16px * 1.5
+
+html
+    background-color: #0082ff
+    font: $base-font-size/1.5 Arial, sans-serif
+    font-size: 100%
+    margin: 0 auto
+    max-width: em(767px)
+    min-width: em(320px)
+    text-redering: optimizeLegibility
+    +respond-to(desktop)
+        min-width: em(768px)
+        max-width: em(960px)
+
+body
+    padding: 0 rem($base-rhythm)
+
+a
+    color: #00274d
+    text-decoration: none
+
+img
+    max-width: 100%
+
+::selection
+    background-color: #ff9700
+
+::moz-selection
+    background-color: #ff9700
+
+.logo
+    +font($weight: 800, $size: 30px, $height: .85, $family: "Georgia, serif")
+    +text-shadow(2px 0 1px #00274d, -2px 0 1px #00274d, 0 2px 1px #00274d, 0 -2px 1px #00274d)
+    color:  #b0c0ff
+    display: block
+    margin: rem($base-rhythm) 0
+    +respond-to(desktop)
+        +font($size: 60px)
+        margin-bottom: rem($base-rhythm * 2)
+        text-align: center
+        width: rem(320px)
+
+.polaroid
+    +box-shadow(1px 6px 6px rgba(0,0,0,.5), 2px 0 2px rgba(0,0,0,.25))
+    background-color: #e6f2ff
+    margin-bottom: rem($base-rhythm * 2)
+    padding: 0 rem($base-rhythm)
+    +respond-to(desktop)
+        padding: 0 rem($base-rhythm * 2.75)
+
+.polaroid__title
+    +font($size: 22px, $height: 1.5)
+    +respond-to(desktop)
+        +font($size: 44px)
+
+.polaroid__image
+    border: 1px inset rgba(255,255,255,.85)
+
+.polaroid__caption
+    +font($size: 18px)
+    padding: rem($base-rhythm) 0
+    +respond-to(desktop)
+        +font($size: 36px)
+        padding: rem($base-rhythm * 2.875) 0
