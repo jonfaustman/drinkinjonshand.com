@@ -6,11 +6,21 @@
  * Author URI: 	http://jon.faustman.org/
  */
 
+.wf-loading .polaroid__caption
+    visibility: hidden
+
 @import compass/reset
 @import compass/css3
 @import base
 
 $base-rhythm: 16px * 1.5
+
+@font-face
+    font-family: 'Permanent Marker'
+    font-style: normal
+    font-weight: 400
+    src: local('Permanent Marker'), local('PermanentMarker'), url(http://themes.googleusercontent.com/static/fonts/permanentmarker/v2/9vYsg5VgPHKK8SXYbf3sMmVSxyvLCPm9firj_jMeQtQ.woff) format('woff')
+
 
 html
     background-color: #0082ff
@@ -30,9 +40,6 @@ body
 a
     color: #00274d
     text-decoration: none
-
-img
-    max-width: 100%
 
 ::selection
     background-color: #ff9700
@@ -56,21 +63,26 @@ img
     +box-shadow(1px 6px 6px rgba(0,0,0,.5), 2px 0 2px rgba(0,0,0,.25))
     background-color: #e6f2ff
     margin-bottom: rem($base-rhythm * 2)
-    padding: 0 rem($base-rhythm)
+    padding: rem($base-rhythm) rem($base-rhythm) 0
     +respond-to(desktop)
-        padding: 0 rem($base-rhythm * 2.75)
+        padding: rem($base-rhythm * 2.75) rem($base-rhythm * 2.75) 0
 
 .polaroid__title
-    +font($size: 22px, $height: 1.5)
+    +font($size: 22px, $height: 1)
     +respond-to(desktop)
         +font($size: 44px)
 
 .polaroid__image
     border: 1px inset rgba(255,255,255,.85)
+    display: block
+    img
+        max-width: 100%
 
 .polaroid__caption
     +font($size: 18px)
-    padding: rem($base-rhythm) 0
+    padding: rem($base-rhythm / 2) 0
+    .wf-active &
+        +font($family: 'Permanent Marker')
     +respond-to(desktop)
         +font($size: 36px)
-        padding: rem($base-rhythm * 2.875) 0
+        padding: rem($base-rhythm) 0

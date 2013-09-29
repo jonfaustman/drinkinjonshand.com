@@ -19,10 +19,10 @@
 <?php while ( have_posts() ) : the_post(); ?>
     <a href="<?php esc_url( the_permalink() ); ?>" title="Permalink to <?php the_title(); ?>" rel="bookmark">
 		<figure class="polaroid">
-			<h1 class="polaroid__title"><?php the_title(); ?></h1>
 			<?php the_content(); ?>
             <figcaption class="polaroid__caption">
-                <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_date( 'm-d-y' ); ?></time>,
+                <h1 class="polaroid__title">@<?php the_title(); ?></h1>
+                <time datetime="<?php the_time( 'Y-m-d' ); ?>" pubdate><?php the_time( 'm-d-y' ); ?></time>,
                 <?php 
                     $category = get_the_category(); 
                     echo '#', $category[0]->cat_name; 
